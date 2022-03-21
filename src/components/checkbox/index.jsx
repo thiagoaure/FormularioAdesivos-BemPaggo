@@ -1,8 +1,14 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 const Checkbox = () => {
+    const [adesivo, setAdesivo] = useState([]);
 
     const adesivos = ['React', 'Vue', 'Angular'];
+
+    const handleCheckbox = (e) => {
+        setAdesivo([...adesivo, e]);
+        console.log(adesivo)
+    }
 
     return (
         <>
@@ -12,6 +18,7 @@ const Checkbox = () => {
                     <input
                     type="checkbox"
                     value={item}
+                    onChange={(e) => handleCheckbox(e.target.value)}
                     />
                     {item}
                 </label>
