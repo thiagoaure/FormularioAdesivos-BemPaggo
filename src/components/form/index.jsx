@@ -4,6 +4,7 @@ import Counter from '../counter';
 import Observations from '../observations';
 
 const Form = () => {
+
     return (
         <form>
             <Checkbox/>

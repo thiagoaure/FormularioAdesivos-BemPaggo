@@ -6,6 +6,7 @@ const Counter = () => {
     const handleIncrement = (e) => {
         e.preventDefault();
         setCount(count + 1);
+        localStorage.setItem("@form-count", count);
     }
 
     const handleDencrement = (e) => {
@@ -15,7 +16,9 @@ const Counter = () => {
         } else {
             setCount(count - 1);
         }
+        localStorage.setItem("form-count", count);
     }
+
     return (
         <div>
             <h2>Quantos adesivos de cada?</h2>
