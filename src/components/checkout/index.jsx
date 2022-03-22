@@ -38,7 +38,7 @@ const Checkout = () => {
         <div>
             <S.Container>
                 <S.CheckMainContainer>
-                    <h3>Vocé está comprando os seguintes adesivos:</h3>
+                    <h3>Vocé está adqurindo os seguintes adesivos:</h3>
                     {
                         shoppings.adesivos.map((item, index) => (
                             <div>
