@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import {ToggleButtonGroup, ToggleButton}  from "react-bootstrap";
+import * as S from './styled';
 
 const Counter = () => {
     const [count, setCount] = useState(0);
@@ -25,11 +26,13 @@ const Counter = () => {
     return (
         <div>
             <h3>Quantos adesivos de cada?</h3>
-            <ToggleButtonGroup type="btn" className="mb-2">
-                <ToggleButton  onClick={handleDecrement} id="tbg-check-1" size="sm">-</ToggleButton>
-                    <h4>{count}</h4>
-                <ToggleButton onClick={handleIncrement} id="tbg-check-1" size="sm">+</ToggleButton>
-            </ToggleButtonGroup>
+            <S.CounterContainer>
+                <ToggleButtonGroup type="btn" className="mb-2">
+                    <ToggleButton  onClick={handleDecrement} id="tbg-check-1" size="sm">-</ToggleButton>
+                        <S.LabelCount>{count}</S.LabelCount>
+                    <ToggleButton onClick={handleIncrement} id="tbg-check-1" size="sm">+</ToggleButton>
+                </ToggleButtonGroup>
+            </S.CounterContainer>
         </div>
     );
 }

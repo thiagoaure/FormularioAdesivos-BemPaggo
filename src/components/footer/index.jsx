@@ -1,9 +1,12 @@
 import React from "react";
+import * as S from './styled';
 
 const Footer = () => {
     return (
         <div>
-            <h1>Footer</h1>
+            <S.FooterContainer>
+            <p>&copy; Thiago Aureliano</p>
+            </S.FooterContainer>
         </div>
     );
 }

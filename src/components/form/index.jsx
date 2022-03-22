@@ -5,6 +5,7 @@ import Counter from '../counter';
 import Observations from '../observations';
 
 import { Button } from 'react-bootstrap';
+import * as S from './styled';
 
 const Form = () => {
     const navigate = useNavigate();
@@ -14,12 +15,14 @@ const Form = () => {
     }
 
     return (
-        <form>
-            <Checkbox/>
-            <Counter/>
-            <Observations/>
-            <Button variant="primary" onClick={handleSubmit}>Enviar</Button>
-        </form>
+        <S.FormContainer>
+            <S.SecondContainer>
+                <Checkbox/>
+                <Counter/>
+                <Observations/>
+                <Button variant="primary" onClick={handleSubmit}>Enviar</Button>
+            </S.SecondContainer>
+        </S.FormContainer>
     );
 }
 

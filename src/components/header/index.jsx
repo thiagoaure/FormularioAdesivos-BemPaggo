@@ -1,9 +1,14 @@
 import React from "react";
+import * as S from "./styled";
 
 const Header = () => {
     return (
         <div>
-            <h1>Header</h1>
+            <S.HeaderContainer>
+                <S.Text>
+                    <p>Formulário para compra de <strong>Pacotes de Adesivo</strong></p>
+                </S.Text>
+            </S.HeaderContainer>
         </div>
     );
 }

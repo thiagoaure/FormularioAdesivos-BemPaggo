@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import * as S from "./styled";
 
 const Checkbox = () => {
     const [check, setCheck] =  useState(
@@ -25,19 +26,23 @@ const Checkbox = () => {
 
     return (
         <>
-            <h3>Quais adesivos?</h3>
-            { adesivos.map((item, index) => (
-                <label>
-                    <input
-                    type="checkbox"
-                    checked={check[index]}
-                    value={item}
-                    onChange={(e) => handleOnChange(e, index)}
-                    />
-                    {item}
-                </label>
-            ))
-            }
+            <S.CheckContainer>
+                <h3>Quais adesivos?</h3>
+                <S.Radios>
+                    { adesivos.map((item, index) => (
+                        <S.Radios>
+                            <input
+                            type="checkbox"
+                            checked={check[index]}
+                            value={item}
+                            onChange={(e) => handleOnChange(e, index)}
+                            />
+                            {item}
+                        </S.Radios>
+                    ))
+                    }
+                </S.Radios>
+            </S.CheckContainer>
         </>
     );
 }
