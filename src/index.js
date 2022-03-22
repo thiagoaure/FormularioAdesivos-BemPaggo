@@ -1,12 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
+import SSRProvider from 'react-bootstrap/SSRProvider';
 import RouteComponent from './routes';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-    <RouteComponent/>
+    <SSRProvider>
+      <RouteComponent/>
+    </SSRProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );

@@ -8,19 +8,19 @@ const Checkbox = () => {
     const adesivos = ['React', 'Vue', 'Angular'];
 
     const handleOnChange = (e, pos) => {
-    let filteredAdesivos = [];
-    const updatedChecked = check.map((item, index) =>
-      index === pos ? !item : item
-    );
-    setCheck(updatedChecked);
-    console.log(updatedChecked);
-    for(let i=0; i<adesivos.length; i++){
-        if(updatedChecked[i] === true){
-            filteredAdesivos.push(adesivos[i]);
+        let filteredAdesivos = [];
+        const updatedChecked = check.map((item, index) =>
+            index === pos ? !item : item
+        );
+        setCheck(updatedChecked);
+        console.log(updatedChecked);
+        for(let i=0; i<adesivos.length; i++){
+            if(updatedChecked[i] === true){
+                filteredAdesivos.push(adesivos[i]);
+            }
         }
-    }
-    localStorage.setItem('@form-ads',JSON.stringify(filteredAdesivos));
-    // console.log(filteredAdesivos);
+        localStorage.setItem('@form-ads',JSON.stringify(filteredAdesivos));
+        console.log(filteredAdesivos);
     }
 
     return (

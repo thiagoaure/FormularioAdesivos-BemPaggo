@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import {ToggleButtonGroup, ToggleButton}  from "react-bootstrap";
 
 const Counter = () => {
     const [count, setCount] = useState(0);
@@ -8,7 +9,7 @@ const Counter = () => {
         setCount(count + 1);
     }
 
-    const handleDencrement = (e) => {
+    const handleDecrement = (e) => {
         e.preventDefault();
         if (count <= 0) {
             setCount(0);
@@ -23,10 +24,12 @@ const Counter = () => {
 
     return (
         <div>
-            <h2>Quantos adesivos de cada?</h2>
-            <button onClick={handleDencrement}>-</button>
-            <h4>{count}</h4>
-            <button onClick={handleIncrement}>+</button>
+            <h3>Quantos adesivos de cada?</h3>
+            <ToggleButtonGroup type="btn" className="mb-2">
+                <ToggleButton  onClick={handleDecrement} id="tbg-check-1" size="sm">-</ToggleButton>
+                    <h4>{count}</h4>
+                <ToggleButton onClick={handleIncrement} id="tbg-check-1" size="sm">+</ToggleButton>
+            </ToggleButtonGroup>
         </div>
     );
 }

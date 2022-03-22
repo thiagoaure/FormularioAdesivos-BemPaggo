@@ -4,6 +4,8 @@ import Checkbox from '../checkbox';
 import Counter from '../counter';
 import Observations from '../observations';
 
+import { Button } from 'react-bootstrap';
+
 const Form = () => {
     const navigate = useNavigate();
 
@@ -16,7 +18,7 @@ const Form = () => {
             <Checkbox/>
             <Counter/>
             <Observations/>
-            <input type="button"  onClick={handleSubmit} value="Enviar" />
+            <Button variant="primary" onClick={handleSubmit}>Enviar</Button>
         </form>
     );
 }
