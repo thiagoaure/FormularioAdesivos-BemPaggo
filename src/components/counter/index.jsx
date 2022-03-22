@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 const Counter = () => {
     const [count, setCount] = useState(0);
@@ -6,7 +6,6 @@ const Counter = () => {
     const handleIncrement = (e) => {
         e.preventDefault();
         setCount(count + 1);
-        localStorage.setItem("@form-count", count);
     }
 
     const handleDencrement = (e) => {
@@ -16,8 +15,11 @@ const Counter = () => {
         } else {
             setCount(count - 1);
         }
-        localStorage.setItem("form-count", count);
     }
+
+    useEffect(() => {
+        localStorage.setItem("@form-count", count);
+    }, [count, setCount])
 
     return (
         <div>

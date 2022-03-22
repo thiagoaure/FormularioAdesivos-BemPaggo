@@ -1,12 +1,15 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 const Observations = () => {
     const [obs, setObs] = useState('');
 
     const handleOnChange = (value) => {
         setObs(value);
-        localStorage.setItem("@form-obs", obs);
     }
+
+    useEffect(() => {
+        localStorage.setItem("@form-obs", obs);
+    }, [obs])
 
     return (
         <div>
